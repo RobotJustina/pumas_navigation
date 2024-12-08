@@ -4,8 +4,6 @@
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{multicol}
-\usepackage[spanish]{babel}
-\spanishdecimal{.}
 \usepackage{subfig}
 \usepackage{fancyhdr}
 \usepackage{pstricks}
@@ -88,60 +86,28 @@
 \renewcommand{\tablename}{Tabla}
 \renewcommand{\figurename}{Figura}
 
-\title[Introducción a la navegación autónoma]{Introducción a la navegación autónoma para robots móviles}
+\title[Navegación Autónoma]{Introducción a la navegación autónoma para robots móviles}
 \author[Marco Negrete]{Marco Negrete}
 \institute[FI, UNAM]{Facultad de Ingeniería, UNAM}
-\date[EIR 2024-2025]{Escuela de Invierno de Robótica 2024-2025}
+\date[EIR 2024-2025]{Escuela de Invierno de Robótica 2024-2025, CIC, IPN\\ \texttt{https://github.com/RobotJustina/pumas\_navigation}}
 
 \begin{frame}
 \titlepage
 \end{frame}
 
-\begin{frame}\frametitle{Contenido}
-  \begin{itemize}
-  \item Representación del ambiente
-    \begin{itemize}
-    \item Celdas de ocupación
-    \item Agrupamiento
-    \item Diagramas de Voronoi
-    \end{itemize}
-  \item Planeación de rutas
-    \begin{itemize}
-    \item Métodos basados en grafos: BFS, DFS, Dijkstra, A*
-    \item Métodos basados en muestreo: RRT
-    \end{itemize}
-  \item Seguimiento de rutas
-    \begin{itemize}
-    \item Modelos cinemáticos: base diferencial, omnidireccional y Ackermann
-    \item Control de posición
-    \end{itemize}
-  \item Localización
-    \begin{itemize}
-    \item Filtros Bayesianos: Filtro de Kalman y Filtros de Partículas
-    \item Modelos Ocultos de Markov
-    \end{itemize}
-  \item Evasión de obstáculos
-    \begin{itemize}
-    \item Campos potenciales artificiales
-    \end{itemize}
-  \item Navegación sin mapa
-    \begin{itemize}
-    \item Comportamientos mediante redes neuronales 
-    \end{itemize}
-  \end{itemize}
-\end{frame}
+\input{Tex/Introduction.tex}
+\input{Tex/MotionPlanning.tex}
 
-%\input{Tex/Speech.tex}
 \bibliographystyle{abbrv}
 \bibliography{References}
 \begin{frame}
-  \Large{Contacto}
+  \Large{Contact}
   \[\]
   \large
   Dr. Marco Negrete\\
-  Profesor Asociado C\\
-  Departamento de Procesamiento de Señales\\
-  Facultad de Ingeniería, UNAM.
+  Associated Professor\\
+  Signal Processing Department\
+  School of Engineering, UNAM.
   \[\]
   marco.negrete@ingenieria.unam.edu\\
 \end{frame}
