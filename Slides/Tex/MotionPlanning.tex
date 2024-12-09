@@ -66,6 +66,31 @@ El problema de la planeación de movimientos comprende cuatro tareas principales
   El mapa resultante se representa en memoria mediante una matriz de valores de ocupación. En ROS, los mapas utilizan el mensaje \texttt{nav\_msgs/OccupancyGrid}.
 \end{frame}
 
+\begin{frame}[containsverbatim]\frametitle{Ejercicio 1}
+  \begin{itemize}
+  \item Cree un espacio de trabajo para ROS y clone los repositorios:
+    \begin{itemize}
+    \item \texttt{git clone https://github.com/RobotJustina/pumas\_hardware}
+    \item \texttt{git clone https://github.com/RobotJustina/pumas\_navigation}
+    \end{itemize}
+  \item Compile el espacio de trabajo
+  \item Ejecute el comando
+    \begin{lstlisting}[language=bash]
+      roslaunch hardware_bring_up justina_hardware_gazebo.launch
+    \end{lstlisting}
+  \item En otra terminal, ejecute el comando:
+    \begin{lstlisting}[language=bash]
+      roslaunch navigation_bring_up navigation.launch
+    \end{lstlisting}
+  \item En otra terminal, ejecute el comando:
+    \begin{lstlisting}[language=bash]
+    rviz -d src/pumas_navigation/navigation_bring_up/rviz/pumas_navigation.rviz
+    \end{lstlisting}
+  \item Observe el mapa de celdas de ocupación
+  \item Opcional: Modifique que archivo \texttt{navigation\_bring\_up/maps/appartment.pgm}
+  \end{itemize}
+\end{frame}
+
 \begin{frame}\frametitle{Diagrama de Voronoi Generalizado}
   \begin{itemize}
   \item A diferencia de los mapas geométricos, donde se busca reflejar la forma exacta del ambiente, los \textbf{mapas topológicos} buscan representar solo las relaciones espaciales de los puntos de interés.
@@ -97,6 +122,27 @@ El problema de la planeación de movimientos comprende cuatro tareas principales
       \includegraphics[width=\textwidth]{Figures/MotionPlanning/GVDFromGrid.png}
     \end{column}
   \end{columns}
+\end{frame}
+
+\begin{frame}[containsverbatim]\frametitle{Ejercicio 2}
+  \begin{itemize}
+  \item Ejecute el comando
+    \begin{lstlisting}[language=bash]
+      roslaunch hardware_bring_up justina_hardware_gazebo.launch
+    \end{lstlisting}
+  \item En otra terminal, ejecute el comando:
+    \begin{lstlisting}[language=bash]
+      roslaunch navigation_bring_up navigation.launch
+    \end{lstlisting}
+  \item En otra terminal, ejecute el comando:
+    \begin{lstlisting}[language=bash]
+    rviz -d src/pumas_navigation/navigation_bring_up/rviz/pumas_navigation.rviz
+    \end{lstlisting}
+  \item En otra terminal, ejecute el comando:
+    \begin{lstlisting}[language=bash]
+      rosrun map_augmenter gvd.py
+    \end{lstlisting}
+  \end{itemize}
 \end{frame}
 
 \section{Planeación de rutas}
@@ -147,6 +193,24 @@ El problema de la planeación de movimientos comprende cuatro tareas principales
       \end{figure}
     \end{column}
   \end{columns}
+\end{frame}
+
+\begin{frame}[containsverbatim]\frametitle{Ejercicio 3}
+  \begin{itemize}
+  \item Ejecute el comando
+    \begin{lstlisting}[language=bash]
+      roslaunch hardware_bring_up justina_hardware_gazebo.launch
+    \end{lstlisting}
+  \item En otra terminal, ejecute el comando:
+    \begin{lstlisting}[language=bash]
+      roslaunch navigation_bring_up navigation.launch use_rrt:=true
+    \end{lstlisting}
+  \item En otra terminal, ejecute el comando:
+    \begin{lstlisting}[language=bash]
+    rviz -d src/pumas_navigation/navigation_bring_up/rviz/pumas_navigation.rviz
+  \end{lstlisting}
+  \item Con RViz fije un punto meta
+  \end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{Métodos basados en grafos}
@@ -331,6 +395,25 @@ El problema de la planeación de movimientos comprende cuatro tareas principales
   \item La lista abierta se puede implementar con una \textit{Heap}, de este modo, la inserción de los nodos $n$ se puede hacer en tiempo logarítmico y la selección del nodo con menor $f$ se hace en tiempo constante.
   \end{itemize}
 \end{frame}
+
+\begin{frame}[containsverbatim]\frametitle{Ejercicio 4}
+  \begin{itemize}
+  \item Ejecute el comando
+    \begin{lstlisting}[language=bash]
+      roslaunch hardware_bring_up justina_hardware_gazebo.launch
+    \end{lstlisting}
+  \item En otra terminal, ejecute el comando:
+    \begin{lstlisting}[language=bash]
+      roslaunch navigation_bring_up navigation.launch
+    \end{lstlisting}
+  \item En otra terminal, ejecute el comando:
+    \begin{lstlisting}[language=bash]
+    rviz -d src/pumas_navigation/navigation_bring_up/rviz/pumas_navigation.rviz
+  \end{lstlisting}
+  \item Detenga la navegación y cambien las constantes $\alpha$ y $\beta$
+  \end{itemize}
+\end{frame}
+
 
 \section{Seguimiento de rutas}
 \begin{frame}\frametitle{Seguimiento de rutas}
@@ -872,24 +955,24 @@ $q \leftarrow q_s$\;
       Mapas geométricos (los más comunes son las celdas de ocupación) para representar el ambiente
       \begin{figure}
         \centering
-        \includegraphics[width=0.5\textwidth]{Figures/OccupancyGrid.png}
+        \includegraphics[width=0.5\textwidth]{Figures/MotionPlanning/OccupancyGrid.png}
       \end{figure}
       Planeadores de rutas basados en grafos o basados en muestreo
       \begin{figure}
         \centering
-        \includegraphics[width=0.7\textwidth]{Figures/AStarComparison.png}
+        \includegraphics[width=0.7\textwidth]{Figures/MotionPlanning/AStarComparison.png}
       \end{figure}
     \end{column}
     \begin{column}{0.5\textwidth}
       Filtros de partículas (también EKF) para localización y mapeo
       \begin{figure}
         \centering
-        \includegraphics[width=0.55\textwidth]{Figures/ParticleFilter4.pdf}
+        \includegraphics[width=0.55\textwidth]{Figures/MotionPlanning/ParticleFilter4.pdf}
       \end{figure}
       Evasión de obstáculos mediante campos potenciales
       \begin{figure}
         \centering
-        \includegraphics[width=0.55\textwidth]{Figures/PotFields.png}
+        \includegraphics[width=0.55\textwidth]{Figures/MotionPlanning/PotFields.png}
       \end{figure}
     \end{column}
   \end{columns}
@@ -900,7 +983,7 @@ $q \leftarrow q_s$\;
   Navegación sin mapa (geométrico)
   \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{Figures/MaplessNavigation.pdf}
+    \includegraphics[width=0.8\textwidth]{Figures/MotionPlanning/MaplessNavigation.pdf}
   \end{figure}
 \end{frame}
 
@@ -911,19 +994,19 @@ $q \leftarrow q_s$\;
       Discretización del espacio alrededor del robot:
       \begin{figure}
         \centering
-        \includegraphics[width=0.8\textwidth]{Figures/RLStates.pdf}
+        \includegraphics[width=0.8\textwidth]{Figures/MotionPlanning/RLStates.pdf}
       \end{figure}
       Discretización de los comandos de velocidad como acciones::
       \begin{figure}
         \centering
-        \includegraphics[width=0.8\textwidth]{Figures/RLActions.pdf}
+        \includegraphics[width=0.8\textwidth]{Figures/MotionPlanning/RLActions.pdf}
       \end{figure}
     \end{column}
     \begin{column}{0.4\textwidth}
       DNN para generar comandos de velocidad:
       \begin{figure}
         \centering
-        \includegraphics[width=0.95\textwidth]{Figures/DNN.pdf}
+        \includegraphics[width=0.95\textwidth]{Figures/MotionPlanning/DNN.pdf}
       \end{figure}
       Entrenamiento usando datos generados por humanos y datos generados usando campos potenciales
     \end{column}
@@ -931,8 +1014,8 @@ $q \leftarrow q_s$\;
       Pruebas en ambientes diferentes al de entrenamiento:
       \begin{figure}
         \centering
-        \includegraphics[width=0.45\textwidth]{Figures/Ambiente1.png}
-        \includegraphics[width=0.45\textwidth]{Figures/Ambiente2.png}
+        \includegraphics[width=0.45\textwidth]{Figures/MotionPlanning/Ambiente1.png}
+        \includegraphics[width=0.45\textwidth]{Figures/MotionPlanning/Ambiente2.png}
       \end{figure}
       En el ambiente conocido (izq), la navegación basada en grafos y los campos potenciales superaron a las DNN, pero en el ambiente desconocido (derecha), la DNN superó a ambos métodos. 
     \end{column}

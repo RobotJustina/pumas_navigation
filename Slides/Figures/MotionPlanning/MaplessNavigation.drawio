@@ -1,0 +1,49 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="Page-1" id="HJyucbCn0e5oC5vZJ6M8">
+    <mxGraphModel dx="1362" dy="843" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="OpJtiOlrjxHDp4OnKL4W-1" value="SEMANTIC DESCRIPTION OF THE ENVIRONMENT:&lt;div&gt;&lt;br&gt;&lt;div&gt;(ROOM (NAME livingroom) (IN house) (NEXT-TO kitchen corridor bedroom)&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="110" y="50" width="240" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="OpJtiOlrjxHDp4OnKL4W-2" value="EXPERT SYSTEM TO PLAN HIGH-LEVEL MOVEMENTS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="320" y="180" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="OpJtiOlrjxHDp4OnKL4W-3" value="SEMANTIC LOCALIZATION&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Recognizing the most common objects in a room&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="470" y="50" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="OpJtiOlrjxHDp4OnKL4W-4" value="REACTIVE BEHAVIORS&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Implemented using RL or DNN&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="300" y="300" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="OpJtiOlrjxHDp4OnKL4W-5" value="TRAINING&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Using as tutor the traditional navigation system and also human-guided movements&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="580" y="200" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="OpJtiOlrjxHDp4OnKL4W-6" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="OpJtiOlrjxHDp4OnKL4W-1" target="OpJtiOlrjxHDp4OnKL4W-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="460" as="sourcePoint" />
+            <mxPoint x="450" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OpJtiOlrjxHDp4OnKL4W-7" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="OpJtiOlrjxHDp4OnKL4W-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="460" as="sourcePoint" />
+            <mxPoint x="405" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OpJtiOlrjxHDp4OnKL4W-8" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="OpJtiOlrjxHDp4OnKL4W-2" target="OpJtiOlrjxHDp4OnKL4W-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="460" as="sourcePoint" />
+            <mxPoint x="450" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OpJtiOlrjxHDp4OnKL4W-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="OpJtiOlrjxHDp4OnKL4W-5" target="OpJtiOlrjxHDp4OnKL4W-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="460" as="sourcePoint" />
+            <mxPoint x="450" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
